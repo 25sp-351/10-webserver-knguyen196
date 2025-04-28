@@ -10,7 +10,7 @@
 void serve_static(int client_fd, const char *path) {
     char filepath[512] = "./static";
     strncat(filepath, path + 7,
-            sizeof(filepath) - strlen(filepath) - 1);  // skip "/static"
+            sizeof(filepath) - strlen(filepath) - 1);
 
     int fd = open(filepath, O_RDONLY);
     if (fd < 0) {
